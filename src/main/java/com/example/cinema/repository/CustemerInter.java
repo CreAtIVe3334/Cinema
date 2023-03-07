@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 public interface CustemerInter extends JpaRepository<Customer,Integer> {
     Customer save();
     Customer findByName();
+    Customer findByPhoneNumber();
     Customer findByTickets();
 
 }

@@ -10,5 +10,6 @@ import java.util.List;
 public interface MovieInter extends JpaRepository<Movie,Integer> {
     Movie findByTitle();
     List<Movie> findAll();
+    Movie delete();
     Movie save();
 }

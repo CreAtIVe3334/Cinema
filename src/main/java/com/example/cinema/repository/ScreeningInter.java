@@ -6,4 +6,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface ScreeningInter extends JpaRepository<Screening,Integer> {
+    Screening save();
+
 }

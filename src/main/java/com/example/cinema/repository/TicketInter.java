@@ -8,5 +8,6 @@ import java.util.List;
 
 @Repository
 public interface TicketInter extends JpaRepository<Ticket,Integer> {
+    List<Ticket> findAll();
     Ticket save();
 }
