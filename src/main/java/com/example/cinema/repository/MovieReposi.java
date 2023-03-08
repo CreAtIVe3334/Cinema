@@ -1,13 +1,13 @@
 package com.example.cinema.repository;
 
-import com.example.cinema.entity.Ticket;
+import com.example.cinema.entity.Movie;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 @Repository
-public interface TicketInter extends JpaRepository<Ticket,Integer> {
-    List<Ticket> findAll();
-    Ticket save();
+public interface MovieReposi extends JpaRepository<Movie,Integer> {
+
+
 }

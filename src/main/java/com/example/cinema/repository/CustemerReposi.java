@@ -5,10 +5,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface CustemerInter extends JpaRepository<Customer,Integer> {
-    Customer save();
-    Customer findByName();
-    Customer findByPhoneNumber();
-    Customer findByTickets();
+public interface CustemerReposi extends JpaRepository<Customer,Integer> {
+        Customer findByPhoneNumber(String phoneNumber);
 
 }
