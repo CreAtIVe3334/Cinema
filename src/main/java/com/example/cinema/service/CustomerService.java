@@ -10,11 +10,15 @@ public class CustomerService {
     @Autowired
     CustemerReposi custemerReposi;
 
-    Customer save(Customer customer){
+    Customer registration(Customer customer){
+        return custemerReposi.save(customer);
+    }
+    Customer update(Customer customer){
         return custemerReposi.save(customer);
     }
 
     Customer findByPhoneNumber(String phoneNumber){
         return custemerReposi.findByPhoneNumber(phoneNumber);
     }
+
 }

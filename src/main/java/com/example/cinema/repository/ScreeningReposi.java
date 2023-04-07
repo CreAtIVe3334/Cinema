@@ -7,5 +7,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface ScreeningReposi extends JpaRepository<Screening,Integer> {
 
+    Screening findById(String id);
 
 }
