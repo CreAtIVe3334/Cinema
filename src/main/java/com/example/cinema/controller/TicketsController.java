@@ -25,7 +25,7 @@ public class TicketsController {
     }
 
     @PostMapping("/buy")
-    public ResponseEntity<Ticket> buy(@RequestBody Customer customer, @PathVariable String ticketId){
+    public ResponseEntity<Ticket> buy(@RequestBody Customer customer, @PathVariable String ticketId) throws Exception {
         return new ResponseEntity<Ticket>(ticketSevice.buy(customer,ticketId),HttpStatus.ACCEPTED);
     }
 

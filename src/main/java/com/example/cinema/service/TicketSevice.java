@@ -4,6 +4,7 @@ import com.example.cinema.dto.TicketDto;
 import com.example.cinema.entity.Customer;
 import com.example.cinema.entity.Ticket;
 import com.example.cinema.enums.State;
+import com.example.cinema.exceptions.BuyException;
 import com.example.cinema.repository.CustemerReposi;
 import com.example.cinema.repository.ScreeningReposi;
 import com.example.cinema.repository.TicketReposi;
@@ -34,14 +35,17 @@ public class TicketSevice {
         return ticketDtos;
     }
 
-    public Ticket buy(Customer customer,String ticketId){
+    public Ticket buy(Customer customer,String ticketId) throws Exception{
         Ticket ticket = ticketReposi.findById(ticketId);
         ticket.setState(State.SOLD);
+        if(customer.getBudget().compareTo(ticket.getPrice())>=0){
         custemerReposi.save(customer);
         ticketReposi.save(ticket);
-        return ticket;
-
-
+        }
+        else {
+            throw new BuyException("kifayet qeder vesaitiniz yoxdur!");
+        }
+    return ticket;
     }
 
 }

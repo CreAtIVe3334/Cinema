@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import javax.validation.constraints.*;
+import java.math.BigDecimal;
 import java.util.List;
 
 
@@ -28,6 +29,8 @@ public class Customer {
     private String phoneNumber;
     @NotNull(message = "Payment Information cannot be null")
     private String paymentInformation;
+
+    private BigDecimal budget;
     @OneToMany
     @JoinTable(name = "customer_ticket",joinColumns = {@JoinColumn(name = "customer_id",referencedColumnName = "id")},
     inverseJoinColumns = {@JoinColumn(name = "ticket_id",referencedColumnName = "id")})
