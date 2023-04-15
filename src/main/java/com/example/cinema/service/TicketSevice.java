@@ -43,6 +43,7 @@ public class TicketSevice {
         ticketReposi.save(ticket);
         }
         else {
+
             throw new BuyException("kifayet qeder vesaitiniz yoxdur!");
         }
     return ticket;
